@@ -3,8 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  /* Add this to your global styles or create a new CSS file */
+  html {
+    scroll-behavior: smooth;
+    transition: scroll-behavior 0.3s ease;
+  }
+
+  /* Optional: Add a transition for smoother scrolling */
+
   body {
     @apply font-secondary text-neutral-400 bg-[#e5e5e5];
+    transition: scroll-behavior 0.3s ease;
   }
   h1,
   h2,

@@ -1,26 +1,64 @@
-import React from "react";
-import loginImage from "../assets/img/login.jpg";
-import { footer } from "../data";
+import React, { useState } from "react";
+import loginImage from "../assets/LOGO.png";
+import { useNavigate } from "react-router-dom";
+// import { footer } from "../data";
 
 const Login = () => {
-  const { logo, copyrightText } = footer;
+  const navigate = useNavigate(); // Import and use useNavigate hook
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = validateForm();
+    if (Object.keys(errors).length === 0) {
+      console.log(formData);
+    } else {
+      setFormErrors(errors);
+    }
+  };
+
+  const validateForm = () => {
+    const errors = {};
+
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+    }
+    if (!formData.password.trim()) {
+      errors.password = "Password is required";
+    }
+
+    return errors;
+  };
+
   return (
     <>
-      <div className="py-16  bg-neutral-950   h-[700px] ">
-        <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl border-2  border-primary-200  mt-10   ">
+      <div className="py-16 bg-neutral-950 h-auto  ">
+        <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl border-2 border-primary-200">
           <div
-            className="hidden lg:block lg:w-1/2 bg-cover"
+            className="hidden lg:block lg:w-1/2 bg-center bg-cover"
             style={{
               backgroundImage: `url(${loginImage})`,
             }}
           ></div>
-          <div className="w-full p-8 lg:w-1/2 bg-neutral-500   ">
+          <div className="w-full p-8 lg:w-1/2 bg-neutral-500">
             <img
               src="http://localhost:3000/static/media/logo.6705e9395036155b8061dd44378e56e7.svg"
               alt=""
               className=" flex  mb-3  mx-auto "
             />
-            <p className="text-xl  text-center  text-white">Welcome back!</p>
+            <p className="text-xl text-center text-white">Welcome back!</p>
             <a
               href="#"
               className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100 border-white  border-[1px]  "
@@ -49,47 +87,66 @@ const Login = () => {
                 Sign in with Google
               </h1>
             </a>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="border-b w-1/5 lg:w-1/4"></span>
-              <a
-                href="#"
-                className="text-xs text-center text-gray-500 uppercase"
-              >
-                or login with email
-              </a>
-              <span className="border-b w-1/5 lg:w-1/4"></span>
-            </div>
-            <div className="mt-4">
-              <label className="block text-white text-sm font-bold mb-2">
-                Email Address
-              </label>
-              <input
-                className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
-                type="email"
-              />
-            </div>
-            <div className="mt-4">
-              <div className="flex justify-between">
+            <form onSubmit={handleSubmit}>
+              <div className="mt-4">
                 <label className="block text-white text-sm font-bold mb-2">
-                  Password
+                  Email Address
                 </label>
-                <a href="#" className="text-xs text-gray-500">
-                  Forget Password?
-                </a>
+                <input
+                  className={`bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border ${
+                    formErrors.email ? "border-red-500" : "border-gray-300"
+                  } rounded py-2 px-4 block w-full appearance-none`}
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                {formErrors.email && (
+                  <p className="text-red-500 text-xs italic mt-1">
+                    {formErrors.email}
+                  </p>
+                )}
               </div>
-              <input
-                className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
-                type="password"
-              />
-            </div>
-            <div className="mt-8">
-              <button className=" py-2 px-4 w-full rounded btn btn-primary btn-lg">
-                Login
-              </button>
-            </div>
+              <div className="mt-4">
+                <div className="flex justify-between">
+                  <label className="block text-white text-sm font-bold mb-2">
+                    Password
+                  </label>
+                  <a href="#" className="text-xs text-gray-500">
+                    Forget Password?
+                  </a>
+                </div>
+                <input
+                  className={`bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border ${
+                    formErrors.password ? "border-red-500" : "border-gray-300"
+                  } rounded py-2 px-4 block w-full appearance-none`}
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+                {formErrors.password && (
+                  <p className="text-red-500 text-xs italic mt-1">
+                    {formErrors.password}
+                  </p>
+                )}
+              </div>
+              <div className="mt-8">
+                <button
+                  type="submit"
+                  className="py-2 px-4 w-full rounded btn btn-primary btn-lg"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
             <div className="mt-4 flex items-center justify-between">
               <span className="border-b w-1/5 md:w-1/4"></span>
-              <a href="#" className="text-xs text-gray-500 uppercase">
+              <a
+                href="#"
+                className="text-xs text-gray-500 uppercase"
+                onClick={() => navigate("/signup")}
+              >
                 or sign up
               </a>
               <span className="border-b w-1/5 md:w-1/4"></span>
@@ -97,16 +154,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <footer className=" bg-neutral-500    h-[100px]  md:h-[90px] px-[20px] ">
-        <div className="container mx-auto h-full flex justify-between items-center md:items-end md:pb-[50px] ">
-          {/* logo */}
-          <a href="oola">
-            <img src={logo} alt="" />
-          </a>
-          {/* //copyright */}
-          <p className=" text-neutral-300 text-sm "> {copyrightText}</p>
-        </div>
-      </footer>
     </>
   );
 };

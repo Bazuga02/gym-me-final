@@ -15,6 +15,7 @@ const PopUp = ({ isOpen, onClose, plan }) => {
     address: "",
   });
 
+  // ... (handleInputChange, validateForm, and handleSubmit functions remain the same)
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -65,15 +66,12 @@ const PopUp = ({ isOpen, onClose, plan }) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-neutral-500/50 z-10">
-      <div className="p-8 rounded-lg bg-neutral-500  border-2    border-primary-200  ">
+      <div className="w-full max-w-4xl h-[80vh] md:h-auto p-8 bg-neutral-500 border-2 border-primary-200 overflow-auto">
         <div className="flex items-center justify-between mb-8">
           <div className="text-xl font-bold mx-auto text-primary-200">
             GYM CART
           </div>
-          <button
-            onClick={onClose}
-            className=" text-white  hover:text-neutral-700"
-          >
+          <button onClick={onClose} className=" text-white hover:text-red-600 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -92,21 +90,25 @@ const PopUp = ({ isOpen, onClose, plan }) => {
         </div>
         <div className="flex flex-col md:flex-row gap-y-4 md:gap-x-4">
           <div className="flex flex-col md:w-1/2">
-            <div className="text-lg font-bold mb-4">{plan.name}</div>
-            <div className="text-xl font-bold mb-4 ">
-              AMOUNT: <span className="  text-yellow-400 ">${plan.price}</span>
+            <div className="text-lg font-bold mb-4 text-white ">
+              {plan.name}
             </div>
-            <ul className="flex flex-col gap-y-4">
+            <div className="text-xl font-bold mb-4 text-white ">
+              AMOUNT: <span className=" text-yellow-400 ">${plan.price}</span>
+            </div>
+            <ul className="flex flex-col gap-y-4 border-white border-[1px] rounded-md p-3 ">
               {plan.list.map((item, idx) => (
                 <li key={idx} className="flex items-center gap-x-[10px]">
-                  <BsCheckCircleFill className="text-lg text-primary-200 " />
-                  <div>{item.name}</div>
+                  <BsCheckCircleFill className="text-lg text-primary-200" />
+                  <div className=" text-white ">{item.name}</div>
                 </li>
               ))}
             </ul>
           </div>
           <div className="flex flex-col md:w-1/2">
-            <div className="text-lg font-bold mb-4 italic">Checkout</div>
+            <div className="text-lg font-bold mb-4 italic text-white">
+              Checkout
+            </div>
             <form className="flex flex-col gap-y-4" onSubmit={handleSubmit}>
               <input
                 type="text"
