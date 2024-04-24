@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/gym-me-final/static/css/main.efd1bfb3.css",
+    "main.js": "/gym-me-final/static/js/main.db1482eb.js",
+    "static/media/LOGO.png": "/gym-me-final/static/media/LOGO.bbaa44d2608d5d3873de.png",
+    "static/media/woman.jpeg": "/gym-me-final/static/media/woman.e78d765ecf9931715a55.jpeg",
+    "static/media/fitness.png": "/gym-me-final/static/media/fitness.7b6886ec36bd5a530025.png",
+    "static/media/iconsocial.png": "/gym-me-final/static/media/iconsocial.a661f5b04b40f556b258.png",
+    "static/media/img4.png": "/gym-me-final/static/media/img4.3f2b41a180f0b0e9b539.png",
+    "static/media/img3.png": "/gym-me-final/static/media/img3.76cafac0275672eee799.png",
+    "static/media/img2.png": "/gym-me-final/static/media/img2.f49950ea6082a8572af4.png",
+    "static/media/whatsapp.jpg": "/gym-me-final/static/media/whatsapp.cfff7034941a42ae4eb8.jpg",
+    "static/media/LOGO2.png": "/gym-me-final/static/media/LOGO2.2014696498fbcfb1d68e.png",
+    "static/media/bg.png": "/gym-me-final/static/media/bg.8cf1299a3701318abd81.png",
+    "static/media/Logo_de_Facebook.png": "/gym-me-final/static/media/Logo_de_Facebook.33518b2ba9e224f1d745.png",
+    "static/media/full-body.png": "/gym-me-final/static/media/full-body.7b7f4457b1823b2339f8.png",
+    "static/media/iconspay.png": "/gym-me-final/static/media/iconspay.de21522deeecbc3f34f7.png",
+    "static/media/resistance.png": "/gym-me-final/static/media/resistance.540bc61f27e4d81469b9.png",
+    "static/media/img1.png": "/gym-me-final/static/media/img1.9267380c648a315f0948.png",
+    "static/media/yoga.png": "/gym-me-final/static/media/yoga.539eef5bad76919bc8a7.png",
+    "static/media/body-pump.png": "/gym-me-final/static/media/body-pump.7f43628c0c9764db6ca3.png",
+    "static/media/xx.jpg": "/gym-me-final/static/media/xx.f62627ed1201c97a7596.jpg",
+    "static/media/boxing.png": "/gym-me-final/static/media/boxing.9f71a908d9d343587439.png",
+    "static/media/battle-rope.png": "/gym-me-final/static/media/battle-rope.0a034d8954be37ab869e.png",
+    "static/media/logo.svg": "/gym-me-final/static/media/logo.6705e9395036155b8061dd44378e56e7.svg",
+    "static/media/calendar.svg": "/gym-me-final/static/media/calendar.eb97a1143885949219d9cff8faa26cce.svg",
+    "static/media/price.svg": "/gym-me-final/static/media/price.2a3609b15219883b22c86446fcece7df.svg",
+    "index.html": "/gym-me-final/index.html",
+    "static/media/users-icn.svg": "/gym-me-final/static/media/users-icn.029124c1ae616c257334677943671696.svg",
+    "static/media/community-icn.svg": "/gym-me-final/static/media/community-icn.cdc6f318d7fe1224a214cc3487c39481.svg",
+    "static/media/question-mark.svg": "/gym-me-final/static/media/question-mark.fa73edbd46a5cfd7ffc58b852e479401.svg",
+    "static/media/chevron-right.svg": "/gym-me-final/static/media/chevron-right.ae85113b06761a88ab09.svg",
+    "static/media/bg.svg": "/gym-me-final/static/media/bg.961c9b88ebbc79d7640f.svg",
+    "static/media/chevron-left.svg": "/gym-me-final/static/media/chevron-left.ee052a4155bc092262df.svg",
+    "main.efd1bfb3.css.map": "/gym-me-final/static/css/main.efd1bfb3.css.map",
+    "main.db1482eb.js.map": "/gym-me-final/static/js/main.db1482eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.efd1bfb3.css",
+    "static/js/main.db1482eb.js"
+  ]
+}
